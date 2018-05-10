@@ -23,6 +23,10 @@ class Calculator extends Component {
     this.setState({actualValueDisplay: newValue});
   }
 
+  valueButtonNumber = button => {
+    return button.value;
+  }
+
   calculateOperation = (operation, operator1, operator2) => {
     switch (operation) {
       case OPERATIONS.ADD:
@@ -43,7 +47,7 @@ class Calculator extends Component {
         <div className="calculator">
           <Display actualValueDisplay={this.state.actualValueDisplay}/>
           <Buttons actualValueDisplay={this.state.actualValueDisplay} changeActualValueDisplay={this.changeActualValueDisplay}
-            calculateOperation={this.calculateOperation} />
+            calculateOperation={this.calculateOperation} valueButtonNumber={this.valueButtonNumber} />
         </div>
       </div>
     );
