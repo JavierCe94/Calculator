@@ -32,9 +32,9 @@ class Buttons extends Component {
   addNumber = e => {
     if (ZERO_NUMBER === this.props.actualValueDisplay || this.state.clearDisplay) {
       this.changeClearDisplay(false);
-      this.props.changeActualValueDisplay(this.props.valueButtonNumber(e.target));
+      this.props.changeActualValueDisplay(this.props.valueElement(e.target));
     } else {
-      const concatenation = `${this.props.actualValueDisplay}${this.props.valueButtonNumber(e.target)}`;
+      const concatenation = `${this.props.actualValueDisplay}${this.props.valueElement(e.target)}`;
       this.props.changeActualValueDisplay(concatenation);
     }
   }
@@ -54,6 +54,7 @@ class Buttons extends Component {
     this.changeClearDisplay(true);
     this.changeActualOperation(e.target.dataset.action);
   }
+
   calculate = e => {
     if ('' !== this.state.actualOperation) {
       const total = this.props.calculateOperation(

@@ -23,7 +23,7 @@ class Calculator extends Component {
     this.setState({actualValueDisplay: newValue});
   }
 
-  valueButtonNumber = button => {
+  valueElement = button => {
     return button.value;
   }
 
@@ -47,7 +47,7 @@ class Calculator extends Component {
         <div className="calculator">
           <Display actualValueDisplay={this.state.actualValueDisplay}/>
           <Buttons actualValueDisplay={this.state.actualValueDisplay} changeActualValueDisplay={this.changeActualValueDisplay}
-            calculateOperation={this.calculateOperation} valueButtonNumber={this.valueButtonNumber} />
+            calculateOperation={this.calculateOperation} valueElement={this.valueElement} />
         </div>
       </div>
     );
